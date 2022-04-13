@@ -5,6 +5,9 @@ package com.zipcodewilmington.singlylinkedlist;
  */
 public class SinglyLinkedList<T> {
 
+
+
+
     public class Node{
         T data;
         Node nextNode;
@@ -44,6 +47,45 @@ public class SinglyLinkedList<T> {
         return size;
     }
 
+    public T get(int index) {
+        if(index > size){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        if(index == 0 && headNode.data != null){
+            return headNode.data;
+        }
+        if(index == size && tailNode.data != null){
+            return tailNode.data;
+        }
+        Node nodeOutput = headNode.nextNode;
+        for(int i = 0; i!=index-1; i++){
+            nodeOutput = nodeOutput.nextNode;
+        }
+        return nodeOutput.data;
+    }
+
+    public int find(T item) {
+        if(headNode.data.equals(item)){
+            return 0;
+        }
+
+        int count = 1;
+        Node node = headNode.nextNode;
+
+        for(int i = 0; i < size; i++){
+            if(node != null){
+                break;
+            }
+            if(!node.data.equals(item) ){
+                node = node.nextNode;
+                count++;
+            } else {
+                return count;
+            }
+        }
+
+        return -1;
+    }
 
 }
 

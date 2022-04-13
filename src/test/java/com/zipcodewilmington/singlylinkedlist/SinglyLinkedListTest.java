@@ -29,13 +29,64 @@ public class SinglyLinkedListTest {
         @Test
         public void getTest(){
                 SinglyLinkedList<Integer> test = new SinglyLinkedList<>();
-                Integer[] input = {0, 3, 5, 7, 9, 7, 5, 3, 0};
+                Integer[] input = {0, 3, 5};
                 for (Integer a: input) {
                         test.add(a);
                 }
 
-                //Assert.assertEquals(input[2], test.get(2));
+                Assert.assertEquals(input[0], test.get(0));
         }
+
+        @Test
+        public void getTest2(){
+                SinglyLinkedList<Integer> test = new SinglyLinkedList<>();
+                Integer[] input = {0, 3, 5, 4};
+                for (Integer a: input) {
+                        test.add(a);
+                }
+                Assert.assertEquals(test.get(1), input[1]);
+        }
+
+        @Test
+        public void getTestGeneric1(){
+                SinglyLinkedList<String> test = new SinglyLinkedList<>();
+                String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
+                for (String a: input) {
+                        test.add(a);
+                }
+                Assert.assertEquals(test.get(1), input[1]);
+        }
+
+        @Test
+        public void findTest(){
+                SinglyLinkedList<String> test = new SinglyLinkedList<>();
+                String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
+                for (String a: input) {
+                        test.add(a);
+                }
+                Assert.assertEquals(test.find(input[1]), 1);
+        }
+
+        @Test
+        public void findTest2(){
+                SinglyLinkedList<String> test = new SinglyLinkedList<>();
+                String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
+                for (String a: input) {
+                        test.add(a);
+                }
+                Assert.assertEquals(test.find(input[4]), 4);
+        }
+
+        @Test
+        public void findTest3(){
+                SinglyLinkedList<String> test = new SinglyLinkedList<>();
+                String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
+                for (String a: input) {
+                        test.add(a);
+                }
+                Assert.assertEquals(test.find("input[1]"), -1);
+        }
+
 
 
 }

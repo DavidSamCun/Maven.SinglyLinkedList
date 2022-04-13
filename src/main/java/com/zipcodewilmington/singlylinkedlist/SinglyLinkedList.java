@@ -26,11 +26,7 @@ public class SinglyLinkedList<T> {
     }
 
     public Boolean add(T input) {
-//        headNode.data = input;
-//        headNode.nextNode = new Node();
-//        size++;
         Node newNode = new Node(input);
-
         if(headNode == null){
             headNode = newNode;
             tailNode = newNode;
@@ -39,7 +35,6 @@ public class SinglyLinkedList<T> {
         }
         tailNode = newNode;
         size++;
-
         return true;
     }
 
@@ -65,17 +60,9 @@ public class SinglyLinkedList<T> {
     }
 
     public int find(T item) {
-        if(headNode.data.equals(item)){
-            return 0;
-        }
-
-        int count = 1;
-        Node node = headNode.nextNode;
-
+        int count = 0;
+        Node node = headNode;
         for(int i = 0; i < size; i++){
-//            if(node != null){
-//                break;
-//            }
             if(!node.data.equals(item) ){
                 if(node.nextNode == null){
                     break;
@@ -86,7 +73,6 @@ public class SinglyLinkedList<T> {
                 return count;
             }
         }
-
         return -1;
     }
 
@@ -94,9 +80,10 @@ public class SinglyLinkedList<T> {
         if (find(s) >= 0) {
             return true;
         }
-
         return false;
     }
+
+
 
 }
 

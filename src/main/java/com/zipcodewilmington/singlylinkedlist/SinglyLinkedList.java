@@ -73,18 +73,29 @@ public class SinglyLinkedList<T> {
         Node node = headNode.nextNode;
 
         for(int i = 0; i < size; i++){
-            if(node != null){
-                break;
-            }
+//            if(node != null){
+//                break;
+//            }
             if(!node.data.equals(item) ){
+                if(node.nextNode == null){
+                    break;
+                }
                 node = node.nextNode;
                 count++;
-            } else {
+            } else if (node.data.equals(item)) {
                 return count;
             }
         }
 
         return -1;
+    }
+
+    public boolean contains(T s) {
+        if (find(s) >= 0) {
+            return true;
+        }
+
+        return false;
     }
 
 }

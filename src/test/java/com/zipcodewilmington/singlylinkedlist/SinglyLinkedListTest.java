@@ -68,6 +68,16 @@ public class SinglyLinkedListTest {
         }
 
         @Test
+        public void findTes(){
+                SinglyLinkedList<String> test = new SinglyLinkedList<>();
+                String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
+                for (String a: input) {
+                        test.add(a);
+                }
+                Assert.assertEquals(test.find(input[2]), 2);
+        }
+
+        @Test
         public void findTest2(){
                 SinglyLinkedList<String> test = new SinglyLinkedList<>();
                 String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
@@ -87,6 +97,33 @@ public class SinglyLinkedListTest {
                 Assert.assertEquals(test.find("input[1]"), -1);
         }
 
+        @Test
+        public void containsTest1(){
+                SinglyLinkedList<String> test = new SinglyLinkedList<>();
+                String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
+                for (String a: input) {
+                        test.add(a);
+                }
+                Assert.assertTrue(test.contains(input[4]));
+        }
 
+        @Test
+        public void containsTest2() {
+                SinglyLinkedList<String> test = new SinglyLinkedList<>();
+                String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
+                for (String a : input) {
+                        test.add(a);
+                }
+                Assert.assertTrue(test.contains(input[0]));
+        }
 
+        @Test
+        public void containsTest3() {
+                SinglyLinkedList<String> test = new SinglyLinkedList<>();
+                String[] input = {"Apple", "Pie", "Sugar", "Honey", "Bunch"};
+                for (String a : input) {
+                        test.add(a);
+                }
+                Assert.assertTrue(test.contains(input[2]));
+        }
 }
